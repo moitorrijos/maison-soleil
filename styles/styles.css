@@ -305,6 +305,7 @@ main {
     .sidebar {
         position: static;
         max-width: none;
+        border-right: 1px solid var(--neutral-400);
     }
     button.close-button {
         display: none;
