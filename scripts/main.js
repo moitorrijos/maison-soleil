@@ -16,3 +16,7 @@ closeButton.forEach(button => {
 overlay.addEventListener('click', () => {
     toggleSidebar();
 });
+
+window.addEventListener('hashchange', () => {
+    toggleSidebar();
+})
