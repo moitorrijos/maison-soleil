@@ -211,9 +211,15 @@ h1, h2, h3, h4, h5, h6 {
    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.sidebar nav a:hover, .sidebar nav a.active {
+.sidebar nav a:hover, .sidebar nav a:focus, .sidebar nav a.active {
     background-color: var(--neutral-0);
     color: var(--neutral-900);
+    box-shadow: 0 1px 0 rgba(62, 44, 30, 0.03);
+}
+
+.sidebar nav a:focus {
+    outline: 2px solid var(--terracotta-600);
+    outline-offset: 2px;
 }
 
 .notification-indicator {
@@ -306,6 +312,7 @@ main {
         position: static;
         max-width: none;
         border-right: 1px solid var(--neutral-400);
+        transform: translateX(0);
     }
     button.close-button {
         display: none;
