@@ -385,16 +385,19 @@ main header {
     flex-direction: column;
 }
 
-.welcome-card {
+.welcome-card, .receipt {
     max-width: 370px;
     width: 100%;
     height: 420px;
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.welcome-card {
     background-image: radial-gradient(circle at right top, var(--terracotta-400) 0%, var(--terracotta-500) 50%, var(--terracotta-700) 100%);
     box-shadow: 0 10px 40px rgba(194, 90, 46, 0.35);
-    padding: 24px;
-    border-radius: 20px;
     transform-origin: center;
-    transform: rotate(2deg);
+    transform: rotate(2deg) translateX(-2px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -420,18 +423,13 @@ main header {
 }
 
 .receipt {
-    max-width: 370px;
-    width: 100%;
-    height: 420px;
     color: var(--neutral-900);
     background-color: var(--neutral-50);
     box-shadow: 0 1px 0px rgba(0, 0, 0, 0.03), 0 16px 30px -20px rgba(62, 44, 30, 0.35);
-    padding: 24px;
-    border-radius: 20px;
     display: flex;
     flex-direction: column;
     transform-origin: center;
-    transform: rotate(-2deg);
+    transform: rotate(-2deg) translateX(2px);
     margin-bottom: 48px;
 }
 
@@ -461,6 +459,10 @@ main header {
 
 .receipt-number-container {
     text-align: right;
+}
+
+.hover-to-fan {
+    display: none;
 }
 
 .check-in-check-out {
@@ -511,7 +513,6 @@ main header {
     flex-direction: column;
     gap: 24px;
 }
-
 .card-header {
     display: flex;
     justify-content: space-between;
@@ -584,6 +585,7 @@ main header {
         visibility: visible;
         opacity: 0.8;
     }
+    
 }
 
 @media (width > 768px) {
@@ -601,7 +603,9 @@ main header {
         grid-template-columns: 260px 1fr;
     }
     .sidebar {
-        position: static;
+        height: 100vh;
+        position: sticky;
+        top: 0;
         max-width: none;
         border-right: 1px solid var(--neutral-400);
         transform: translateX(0);
@@ -618,5 +622,28 @@ main header {
     .welcome-receipt {
         flex-direction: row;
         justify-content: center;
+        cursor: pointer;
+        background-image: url('../assets/images/illustration-sun.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .welcome-card, .receipt {
+        transition: transform 0.3s ease;
+    }
+    .welcome-receipt:hover .welcome-card {
+        transform: rotate(-5deg) translateX(80px);
+    }
+    .welcome-receipt:hover .receipt {
+        transform: rotate(5deg) translateX(-80px);
+    }
+    .hover-to-fan {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        width: 100%;
+        width: 120px;
+        margin: 10px auto 44px;
+        text-align: center;
+        color: var(--neutral-600);
     }
 }
