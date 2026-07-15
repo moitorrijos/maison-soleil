@@ -60,6 +60,8 @@
     --terracotta-400: #E07A3F;
 
     --rose-500: #C04A72;
+
+    --blue-500: #5769C6;
 }
 
 * {
@@ -80,36 +82,52 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Fraunces", serif;
     font-optical-sizing: auto;
     font-style: normal;
+    font-weight: normal;
     font-variation-settings:
         "SOFT" 0,
         "WONK" 0;
 }
 
+button {
+    font: inherit;
+    color: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-align: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
 .text-preset-1 {
+    font-family: "Fraunces", serif;
     font-size: 40px;
     line-height: 1.20;
     letter-spacing: -0.5px; 
 }
-.italic {
-    font-style: italic;
-}
 .text-preset-2 {
+    font-family: "Fraunces", serif;
     font-size: 32px;
     line-height: 1.20;
     letter-spacing: -0.25px; 
 }
 .text-preset-3 {
+    font-family: "Fraunces", serif;
     font-size: 24px;
     line-height: 1.40;
     letter-spacing: -0.2px; 
 }
 .text-preset-4 {
+    font-family: "Fraunces", serif;
     font-size: 20px;
     line-height: 1.40;
     letter-spacing: -0.1px; 
 }
 .text-preset-5 {
-    font-family: "Fraunces", serif;
+    font-family: "DM Sans", sans-serif;
     font-size: 14px;
     line-height: 1.40;
     letter-spacing: 0px;
@@ -133,6 +151,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     line-height: 1.40;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 .text-preset-7 {
     font-family: "DM Sans", sans-serif;
@@ -147,6 +166,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     line-height: 1.40;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 .text-preset-9 {
     font-family: "DM Mono", monospace;
@@ -161,6 +181,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     line-height: 1.40;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 .text-preset-11 {
     font-family: "Fraunces", serif;
@@ -168,6 +189,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     line-height: 1.40;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .sidebar {
@@ -294,8 +316,269 @@ button.close-button {
 main {
     background-color: var(--neutral-100);
     min-height: 100vh;
+    padding: 0 24px; 
 }
 
+.button {
+    padding: 10px 16px;
+    border-radius: 999px;
+}
+
+.button:focus {
+    outline: 2px solid var(--terracotta-600);
+    outline-offset: 2px;
+}
+
+.primary-button {
+    background-color: var(--neutral-900);
+    color: var(--sol-50);
+    border: none;
+}
+
+.primary-button:hover {
+    background-color: var(--neutral-800);
+}
+
+.secondary-button {
+    color: var(--neutral-900);
+    border: 1px solid var(--neutral-400);
+}
+
+.secondary-button:hover {
+    background-color: var(--neutral-200);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.action-buttons button {
+    width: 100%;
+    min-width: fit-content;
+    text-align: center;
+}
+
+.header-info {
+    margin-bottom: 16px;
+}
+
+.status {
+    color: var(--neutral-600);
+}
+
+.bienvenue {
+    color: var(--neutral-900);
+}
+
+.bienvenue span {
+    color: var(--terracotta-600);
+    font-style: italic;
+}
+main header {
+    margin-bottom: 48px;
+}
+
+.welcome-receipt {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-card {
+    max-width: 370px;
+    width: 100%;
+    height: 420px;
+    background-image: radial-gradient(circle at right top, var(--terracotta-400) 0%, var(--terracotta-500) 50%, var(--terracotta-700) 100%);
+    box-shadow: 0 10px 40px rgba(194, 90, 46, 0.35);
+    padding: 24px;
+    border-radius: 20px;
+    transform-origin: center;
+    transform: rotate(2deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    order: -1;
+    z-index: 1;
+}
+
+.welcome-card .card-header {
+    padding-top: 16px;
+    border-top: 1px dashed var(--neutral-400);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.welcome-card .card-text {
+    color: var(--neutral-400);
+}
+
+.welcome-card .card-body .subtitle {
+    color: var(--sol-200);
+    font-style: italic;
+}
+
+.receipt {
+    max-width: 370px;
+    width: 100%;
+    height: 420px;
+    color: var(--neutral-900);
+    background-color: var(--neutral-50);
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.03), 0 16px 30px -20px rgba(62, 44, 30, 0.35);
+    padding: 24px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    transform-origin: center;
+    transform: rotate(-2deg);
+    margin-bottom: 48px;
+}
+
+.host-name {
+    color: var(--sol-50);
+    font-style: italic;
+    margin-bottom: 14px;
+}
+
+.message {
+    color: var(--neutral-50);
+    margin-bottom: 24px;
+}
+
+.card-footer {
+    color: var(--sol-50);
+    margin-top: auto;
+}
+
+.receipt-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--neutral-400);
+    margin-bottom: 14px;
+}
+
+.receipt-number-container {
+    text-align: right;
+}
+
+.check-in-check-out {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.check-in-header {
+    text-align: center;
+}
+.payment-information {
+    padding: 12px 0 16px;
+    border-top: 1px dashed var(--neutral-400);
+    border-bottom: 1px solid var(--neutral-400);
+    margin-bottom: 16px;
+}
+.payment-information-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+}
+.tourist-tax {
+    color: var(--neutral-700);
+}
+.total {
+    color: var(--neutral-600);
+}
+.payment-method {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(343px, 1fr));
+    gap: 24px;
+    padding-bottom: 62px;
+}
+.card {
+    background-color: var(--neutral-50);
+    padding: 20px 24px;
+    border-radius: 16px;
+    border: 1px solid var(--neutral-400);
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.03), 0 10px 24px -16px rgba(62, 44, 30, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--terracotta-600);
+}
+.card:nth-child(2) .card-header {
+    color: var(--blue-500);
+}
+.card:nth-child(3) .card-header {
+    color: var(--rose-500);
+}
+.card-header-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: var(--terracotta-600);
+    display: grid;
+    place-items: center;
+}
+.card:nth-child(2) .card-icon {
+    background-color: var(--blue-500);
+}
+.card:nth-child(3) .card-icon {
+    background-color: var(--rose-500);
+}
+.card-icon img {
+    display: block;
+    width: 24px;
+    height: auto;
+}
+.check-in-time {
+    color: var(--neutral-900);
+}
+.check-in-date {
+    color: var(--neutral-600);
+}
+.instructions {
+    color: var(--neutral-700);
+}
+.network {
+    background-color: var(--neutral-200);
+    color: var(--neutral-600);
+    padding: 8px 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.password-copy {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.copy-button {
+    background-color: var(--neutral-200);
+    border: 1px solid var(--neutral-400);
+    border-radius: 999px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
 @media (width <= 768px) {
     .sidebar-visible .overlay {
         visibility: visible;
@@ -304,6 +587,15 @@ main {
 }
 
 @media (width > 768px) {
+    main {
+        padding: 32px 40px;
+    }
+    main header {
+        display: flex;
+        gap: 8px;
+        justify-content: space-between;
+        align-items: center;
+    }
     .main-container {
         display: grid;
         grid-template-columns: 260px 1fr;
@@ -319,5 +611,12 @@ main {
     }
     .mobile-header {
         display: none;
+    }
+    .welcome-card {
+        order: 1;
+    }
+    .welcome-receipt {
+        flex-direction: row;
+        justify-content: center;
     }
 }
