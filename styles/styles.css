@@ -80,7 +80,7 @@ body {
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-size: 16px;
+    font-size: 1rem;
     position: relative;
 }
 
@@ -624,16 +624,6 @@ main header {
         display: none;
     }
     
-    .hover-to-fan {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-        width: 100%;
-        width: 120px;
-        margin: 10px auto 44px;
-        text-align: center;
-        color: var(--neutral-600);
-    }
 }
 
 @media (width >= 768px) {
@@ -657,6 +647,16 @@ main header {
     }
     .welcome-receipt:hover .receipt {
         transform: rotate(5deg) translateX(-80px);
+    }
+    .hover-to-fan {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        width: 100%;
+        width: 120px;
+        margin: 10px auto 44px;
+        text-align: center;
+        color: var(--neutral-600);
     }
 }
 
