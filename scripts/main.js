@@ -48,7 +48,7 @@ addToCalendarButton.addEventListener('click', () => {
         location: 'Maison Soleil · 12 Rue des Oliviers · Cassis',
     });
 
-    window.open(calendarUrl, '_blank');
+    window.open(calendarUrl, '_blank', 'noopener,noreferrer');
 });
 
 // Copy password to clipboard functionality
