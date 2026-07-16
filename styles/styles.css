@@ -471,16 +471,21 @@ main header {
     margin-bottom: 16px;
 }
 
-.check-in-header {
+.receipt-check-in-header,
+.receipt-check-out-header {
     text-align: center;
     margin-bottom: 4px;
 }
-.check-in-date {
+.receipt-check-in-date,
+.receipt-check-out-date {
     color: var(--neutral-900);
     margin-bottom: 4px;
+    text-align: center;
 }
-.check-in-time {
-    color: var(--neutral-600);
+.receipt-check-in-time,
+.receipt-check-out-time {
+    text-align: center;
+    color: var(--neutral-700);
 }
 .payment-information {
     padding: 12px 0 16px;
