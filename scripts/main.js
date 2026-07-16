@@ -1,19 +1,22 @@
 const mainContainer = document.querySelector('.main-container');
 const overlay = document.querySelector('.overlay');
 const closeButton = document.querySelectorAll('.close-button');
+const navLinks = document.querySelectorAll('.nav a');
 
 closeButton.forEach(button => {
     button.addEventListener('click', () => {
-        mainContainer.classList.toggle('sidebar-visible');
+        mainContainer.classList.remove('sidebar-visible');
     });
 });
 
 overlay.addEventListener('click', () => {
-    mainContainer.classList.toggle('sidebar-visible');
+    mainContainer.classList.remove('sidebar-visible');
 });
 
-window.addEventListener('hashchange', () => {
-    mainContainer.classList.toggle('sidebar-visible');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mainContainer.classList.remove('sidebar-visible');
+    });
 })
 
 // Print receipt functionality
