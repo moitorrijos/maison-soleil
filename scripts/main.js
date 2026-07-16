@@ -61,7 +61,7 @@ copyButton.addEventListener('click', async () => {
         await navigator.clipboard.writeText(password);
         copyButton.textContent = 'Copied!';
     } catch {
-        copyButton.textContent = 'Press Ctrl/&#8984; +C to copy';
+        copyButton.textContent = 'Ctrl+C to copy';
     }
     setTimeout(() => {
         copyButton.textContent = 'Copy';
