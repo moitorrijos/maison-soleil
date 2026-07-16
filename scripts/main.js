@@ -15,3 +15,34 @@ overlay.addEventListener('click', () => {
 window.addEventListener('hashchange', () => {
     mainContainer.classList.toggle('sidebar-visible');
 })
+
+// Add dates to calendar functionality
+const addToCalendarButton = document.getElementById('add-to-calendar');
+
+addToCalendarButton.addEventListener('click', () => {
+    const checkIn = addToCalendarButton.dataset.checkIn;
+    const checkOut = addToCalendarButton.dataset.checkOut;
+
+    if (!checkIn || !checkOut) return;
+
+    const calendarUrl = new URL('https://calendar.google.com/calendar/render');
+    calendarUrl.search = new URLSearchParams({
+        action: 'TEMPLATE',
+        text: 'Maison Soleil Reservation',
+        dates: `${checkIn}/${checkOut}`,
+        ctz: 'Europe/Paris',
+        details: 'Reservation at Maison Soleil',
+        location: 'Maison Soleil · 12 Rue des Oliviers · Cassis',
+    });
+
+    window.open(calendarUrl, '_blank');
+});
+
+// Copy password to clipboard functionality
+const copyButton = document.querySelector('.copy-button');
+const passwordP = document.querySelector('.password');
+const password = passwordP.textContent;
+
+copyButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(password);
+})

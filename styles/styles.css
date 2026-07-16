@@ -561,12 +561,13 @@ main header {
 .network {
     background-color: var(--neutral-200);
     color: var(--neutral-600);
-    padding: 8px 10px;
+    padding: 4px 10px;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 4px;
+    height: 32px;
 }
 .password-copy {
     display: flex;
