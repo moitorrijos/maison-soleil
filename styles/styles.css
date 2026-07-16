@@ -262,8 +262,7 @@ button {
     justify-content: space-between;
 }
 
-button.close-button {
-    appearance: none;
+button.close-button, .open-button {
     border: 1px solid var(--neutral-400);
     background-color: transparent;
     border-radius: 4px;
@@ -440,7 +439,7 @@ main header {
 }
 
 .message {
-    color: var(--neutral-50);
+    color: var(--sol-50);
     margin-bottom: 24px;
 }
 
@@ -473,6 +472,14 @@ main header {
 
 .check-in-header {
     text-align: center;
+    margin-bottom: 4px;
+}
+.check-in-date {
+    color: var(--neutral-900);
+    margin-bottom: 4px;
+}
+.check-in-time {
+    color: var(--neutral-600);
 }
 .payment-information {
     padding: 12px 0 16px;
@@ -549,12 +556,7 @@ main header {
     width: 24px;
     height: auto;
 }
-.check-in-time {
-    color: var(--neutral-900);
-}
-.check-in-date {
-    color: var(--neutral-600);
-}
+
 .instructions {
     color: var(--neutral-700);
 }
@@ -611,7 +613,7 @@ main header {
         border-right: 1px solid var(--neutral-400);
         transform: translateX(0);
     }
-    button.close-button {
+    button.close-button, .open-button {
         display: none;
     }
     .mobile-header {
