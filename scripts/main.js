@@ -16,6 +16,13 @@ window.addEventListener('hashchange', () => {
     mainContainer.classList.toggle('sidebar-visible');
 })
 
+// Print receipt functionality
+const printButton = document.getElementById('print-receipt');
+
+printButton.addEventListener('click', () => {
+    window.print();
+});
+
 // Add dates to calendar functionality
 const addToCalendarButton = document.getElementById('add-to-calendar');
 

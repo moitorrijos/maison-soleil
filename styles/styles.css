@@ -388,7 +388,7 @@ main header {
 .welcome-card, .receipt {
     max-width: 370px;
     width: 100%;
-    height: 420px;
+    height: auto;
     border-radius: 20px;
     padding: 24px;
 }
@@ -499,7 +499,7 @@ main header {
 }
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(343px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
     padding-bottom: 62px;
 }
@@ -581,15 +581,15 @@ main header {
     padding: 4px 8px;
     cursor: pointer;
 }
-@media (width <= 768px) {
+
+@media (width <= 820px) {
     .sidebar-visible .overlay {
         visibility: visible;
         opacity: 0.8;
     }
-    
 }
 
-@media (width > 768px) {
+@media (width > 820px) {
     main {
         padding: 32px 40px;
     }
@@ -601,7 +601,7 @@ main header {
     }
     .main-container {
         display: grid;
-        grid-template-columns: 260px 1fr;
+        grid-template-columns: 20vw 1fr;
     }
     .sidebar {
         height: 100vh;
@@ -617,6 +617,20 @@ main header {
     .mobile-header {
         display: none;
     }
+    
+    .hover-to-fan {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        width: 100%;
+        width: 120px;
+        margin: 10px auto 44px;
+        text-align: center;
+        color: var(--neutral-600);
+    }
+}
+
+@media (width >= 768px) {
     .welcome-card {
         order: 1;
     }
@@ -630,6 +644,7 @@ main header {
     }
     .welcome-card, .receipt {
         transition: transform 0.3s ease;
+        height: 430px;
     }
     .welcome-receipt:hover .welcome-card {
         transform: rotate(-5deg) translateX(80px);
@@ -637,14 +652,24 @@ main header {
     .welcome-receipt:hover .receipt {
         transform: rotate(5deg) translateX(-80px);
     }
-    .hover-to-fan {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-        width: 100%;
-        width: 120px;
-        margin: 10px auto 44px;
-        text-align: center;
-        color: var(--neutral-600);
+}
+
+/* Print media: only make the .receipt visible */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .receipt, .receipt * {
+        visibility: visible;
+    }
+    .receipt {
+        position: absolute;
+        left: 50%;
+        top: 40px;
+        transform: translateX(-50%);
+        box-shadow: none;
+        background-color: #fff;
+        border: 1px solid var(--neutral-400);
+        height: auto;
     }
 }
