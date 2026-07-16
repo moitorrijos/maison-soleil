@@ -1,12 +1,15 @@
 const mainContainer = document.querySelector('.main-container');
 const overlay = document.querySelector('.overlay');
-const closeButton = document.querySelectorAll('.close-button');
+const openButton = document.querySelector('.open-button');
+const closeButton = document.querySelector('.close-button');
 const navLinks = document.querySelectorAll('.nav a');
 
-closeButton.forEach(button => {
-    button.addEventListener('click', () => {
-        mainContainer.classList.remove('sidebar-visible');
-    });
+closeButton.addEventListener('click', () => {
+    mainContainer.classList.remove('sidebar-visible');
+});
+
+openButton.addEventListener('click', () => {
+    mainContainer.classList.add('sidebar-visible');
 });
 
 overlay.addEventListener('click', () => {
