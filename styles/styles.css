@@ -64,6 +64,12 @@
     --blue-500: #5769C6;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+  .welcome-receipt:hover .welcome-card,
+  .welcome-receipt:hover .receipt { transform: none; }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -213,6 +219,7 @@ button {
 .logo {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 16px;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--neutral-400);
@@ -233,7 +240,7 @@ button {
    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.sidebar nav a:hover, .sidebar nav a:focus, .sidebar nav a.active {
+.sidebar nav a:hover, .sidebar nav a:focus-visible, .sidebar nav a[aria-current="page"] {
     background-color: var(--neutral-0);
     color: var(--neutral-900);
     box-shadow: 0 1px 0 rgba(62, 44, 30, 0.03);
@@ -254,12 +261,6 @@ button {
     background-color: var(--terracotta-600);
     color: var(--neutral-100);
     border-radius: 999px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 button.close-button, .open-button {
@@ -323,7 +324,7 @@ main {
     border-radius: 999px;
 }
 
-.button:focus {
+.button:focus-visible {
     outline: 2px solid var(--terracotta-600);
     outline-offset: 2px;
 }
@@ -524,12 +525,14 @@ main header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.card-header.card-arrival {
     color: var(--terracotta-600);
 }
-.card:nth-child(2) .card-header {
+.card-header.card-wifi {
     color: var(--blue-500);
 }
-.card:nth-child(3) .card-header {
+.card-header.card-breakfast {
     color: var(--rose-500);
 }
 .card-header-info {
@@ -541,14 +544,16 @@ main header {
     width: 40px;
     height: 40px;
     border-radius: 8px;
-    background-color: var(--terracotta-600);
     display: grid;
     place-items: center;
 }
-.card:nth-child(2) .card-icon {
+.card-arrival .card-icon {
+    background-color: var(--terracotta-600);
+}
+.card-wifi .card-icon {
     background-color: var(--blue-500);
 }
-.card:nth-child(3) .card-icon {
+.card-breakfast .card-icon {
     background-color: var(--rose-500);
 }
 .card-icon img {
@@ -556,7 +561,6 @@ main header {
     width: 24px;
     height: auto;
 }
-
 .instructions {
     color: var(--neutral-700);
 }
